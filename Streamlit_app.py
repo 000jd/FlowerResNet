@@ -6,6 +6,10 @@ from PIL import Image
 from predict import predict_flower
 
 def main():
+    st.set_page_config(page_title="FlowerResNet",
+                   page_icon="🔮",
+                   )
+    
     st.title('Flower Image Prediction')
 
     # Create sidebar
