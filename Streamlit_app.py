@@ -5,11 +5,18 @@ from io import BytesIO
 from PIL import Image
 from predict import predict_flower
 
+
 def main():
     st.set_page_config(page_title="FlowerResNet",
-                   page_icon="🔮",
-                   )
-    
+                       page_icon="🔮",
+                       initial_sidebar_state="expanded",
+                       menu_items={
+                           'Get Help': 'https://www.extremelycoolapp.com/help',
+                           'Report a bug': "https://www.extremelycoolapp.com/bug",
+                           'About': "This Streamlit application showcases the classification of flower images using a custom ResNet model implemented in PyTorch. The Flowers-299 dataset, consisting of 299 flower classes, is utilized for training and evaluation. The application covers various aspects including data preprocessing, model training with SGD optimizer, validation, and model checkpointing for reusability."
+                       }
+                       )
+
     st.title('Flower Image Prediction')
 
     # Create sidebar
@@ -35,11 +42,13 @@ def main():
         )
 
     if image_source == 'Upload':
-        uploaded_file = st.sidebar.file_uploader('Choose an image file', type=['jpg', 'jpeg', 'png'])
+        uploaded_file = st.sidebar.file_uploader(
+            'Choose an image file', type=['jpg', 'jpeg', 'png'])
         if uploaded_file is not None:
             image = Image.open(uploaded_file)
 
-            st.image(image, caption='Uploaded Image', use_column_width=True, width=300)
+            st.image(image, caption='Uploaded Image',
+                     use_column_width=True, width=300)
 
             # Predict button in the sidebar
             if st.sidebar.button('Predict'):
@@ -53,13 +62,15 @@ def main():
                 response = requests.get(image_url)
                 image = Image.open(BytesIO(response.content))
 
-                st.image(image, caption='Image from URL', use_column_width=True, width=300)
+                st.image(image, caption='Image from URL',
+                         use_column_width=True, width=300)
 
                 flower_name = predict_flower(image)
                 st.success(f'Predicted Flower: {flower_name}')
 
             except Exception as e:
                 st.error(f"Error: {e}")
+
 
 if __name__ == '__main__':
     main()
