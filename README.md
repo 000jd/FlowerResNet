@@ -15,7 +15,7 @@ This GitHub project showcases the classification of flower images using a custom
 ## Usage
 To run the Streamlit application download the model and put it in the base diractry and runthe command.
 
-    ~~~bash
+    ~~~bash  
         Streamlit run Streamlit_app.py
     ~~~
 ## Usage
