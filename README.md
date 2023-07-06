@@ -10,7 +10,7 @@ This GitHub project showcases the classification of flower images using a custom
 - Checkpointing to save and load model for future use
 
 ## Demo  
-![App Screenshot](images/screenshot.png)  
+![App Screenshot](https://drive.google.com/drive/folders/1vfVkzVEZu6OjpWKO7cjhlog28WQb8_rs)  
 
 ## Usage
 To use this project, follow these steps:
