@@ -11,9 +11,5 @@ This GitHub project showcases the classification of flower images using a custom
 - Validation during training for monitoring model performance
 - Checkpointing to save and load model for future use
 
-## Installation
-To use this project, please follow these steps:
-
-1. Clone the repository:
-   ```shell
-   git clone https://github.com/username/FlowerResNet.git
+## Demo  
+![App Screenshot](images/screenshot.png)  
