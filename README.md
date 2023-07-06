@@ -13,7 +13,8 @@ This GitHub project showcases the classification of flower images using a custom
 ![App Screenshot](images/screenshot.png)  
 
 ## Accuracy and Loss Graphs 
-![Accuracy Screenshot](iimages/accuracy.png)  
+![Accuracy Screenshot](images/accuracy.png)  
+
 ![Loss Screenshot](images/loss.png)
 ## Usage
 To run the Streamlit application download the model and put it in the base diractry and runthe command.
