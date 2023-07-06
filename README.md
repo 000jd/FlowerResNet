@@ -10,8 +10,14 @@ This GitHub project showcases the classification of flower images using a custom
 - Checkpointing to save and load model for future use
 
 ## Demo  
-![App Screenshot](https://drive.google.com/file/d/1s-qpMuww6zZzwn3HMAZiUQxjWEn5QW-0/view?usp=sharing)  
+![App Screenshot](images/screenshot.png)  
 
+## Usage
+To run the Streamlit application download the model and put it in the base diractry and runthe command.
+
+    ~~~bash
+        Streamlit run Streamlit_app.py
+    ~~~
 ## Usage
 To use this project, follow these steps:
 
