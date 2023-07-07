@@ -12,6 +12,28 @@ This GitHub project showcases the classification of flower images using a custom
 ## Demo  
 ![App Screenshot](images/screenshot.png)  
 
+## Table Of Contents
+
+- [User community](#user-community)
+- [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+    - [Local setup using Docker (Recommended on Windows)](#local-setup-using-docker-recommended-on-windows)
+    - [Local Setup (Standard)](#local-setup-standard)
+    - [Deployment](#deployment)
+    - [Upgrading from a previous version](#upgrading-from-a-previous-version)
+  - [FAQ](#faq)
+- [Features](#features)
+  - [Custom ResNet model for flower image classification](#custom-resnet-model-for-flower-image-classification)
+  - [Data preprocessing](#data-preprocessing)
+  - [Training with SGD optimizer](#training-with-sgd-optimizer)
+  - [Validation and evaluation](#validation-and-evaluation)
+  - [Model checkpointing](#model-checkpointing)
+- [Contributing](#contributing)
+  - [Core Contributors](#core-contributors)
+- [License](#license)
+
+
 ## Accuracy and Loss Graphs 
 ![Accuracy Screenshot](images/accuracy.png)  
 
