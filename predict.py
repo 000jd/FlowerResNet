@@ -29,6 +29,7 @@ def predict_flower(image):
 
     image = transform(image).unsqueeze(0)
 
+    base_dir = os.path.dirname(os.path.abspath(__file__))
     model_path = os.path.join(base_dir, 'res_checkpoint.pth')
 
     if not os.path.exists(model_path):
