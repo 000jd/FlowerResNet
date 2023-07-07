@@ -14,6 +14,7 @@ def download_model():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     # Set the model path to the base directory
     model_path = os.path.join(base_dir, 'res_checkpoint.pth')
+
     with tqdm.tqdm(total=100, unit='B', unit_scale=True) as progress_bar:
         gdd.download_file_from_google_drive(file_id=model_id, dest_path=model_path, showsize=True, overwrite=True,
                                             progress_bar=progress_bar)
@@ -28,7 +29,8 @@ def predict_flower(image):
 
     image = transform(image).unsqueeze(0)
 
-    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'res_checkpoint.pth')
+    model_path = os.path.join(base_dir, 'res_checkpoint.pth')
+
     if not os.path.exists(model_path):
         print('Model not found. Downloading the model...')
         download_model()
