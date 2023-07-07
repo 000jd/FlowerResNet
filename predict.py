@@ -9,9 +9,12 @@ from google_drive_downloader import GoogleDriveDownloader as gdd
 
 def download_model():
     model_id = '1SxqhmJZEgw5h38V6SdrCFeFDsRM-xSnu'  # Replace with your Google Drive model ID
-    model_path = 'res_checkpoint.pth'  # Specify the path to save the downloaded model
+    # Get the base directory
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    # Set the model path to the base directory
+    model_path = os.path.join(base_dir, 'res_checkpoint.pth')
     gdd.download_file_from_google_drive(file_id=model_id, dest_path=model_path)
-
+    
 def predict_flower(image):
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
