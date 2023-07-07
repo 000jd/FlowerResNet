@@ -24,10 +24,11 @@ def predict_flower(image):
 
     image = transform(image).unsqueeze(0)
 
-    model_path = 'res_checkpoint.pth'
+    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'res_checkpoint.pth')
     if not os.path.exists(model_path):
         print('Model not found. Downloading the model...')
         download_model()
+        print('Download complet...')
 
     model = flower_resnet.FlowerResNet(num_classes=299)
     model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu'))['model_state_dict'])
