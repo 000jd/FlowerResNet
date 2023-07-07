@@ -4,7 +4,7 @@ import streamlit as st
 from io import BytesIO
 from PIL import Image
 from predict import predict_flower
-
+import cv2
 
 def main():
     st.set_page_config(page_title="FlowerResNet",
@@ -21,9 +21,9 @@ def main():
 
     # Create sidebar
     st.sidebar.info(
-        "This an  streamlit application which uses pytorch   to do flowere image pridection")
+        "This is a Streamlit application which uses PyTorch to do flower image prediction")
     st.sidebar.title('Choose Image Source')
-    image_source = st.sidebar.radio('Select Image Source:', ('Upload', 'URL'))
+    image_source = st.sidebar.radio('Select Image Source:', ('Upload', 'URL', 'Capture'))
 
     # Create theme selection in the sidebar
     st.sidebar.title('Choose Theme')
@@ -72,6 +72,23 @@ def main():
 
             except Exception as e:
                 st.error(f"Error: {e}")
+
+    elif image_source == 'Capture':
+        if st.sidebar.button('Capture Image'):
+            cap = cv2.VideoCapture(0)
+            ret, frame = cap.read()
+            cap.release()
+
+            if ret:
+                image = Image.fromarray(frame)
+
+                st.image(image, caption='Captured Image',
+                         use_column_width=True, width=300)
+
+                flower_name = predict_flower(image)
+                st.success(f'Predicted Flower: {flower_name}')
+            else:
+                st.warning('Failed to capture image. Please try again.')
 
 
 if __name__ == '__main__':
