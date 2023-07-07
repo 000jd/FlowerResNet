@@ -20,6 +20,8 @@ def main():
     st.title('Flower Image Prediction')
 
     # Create sidebar
+    st.sidebar.info(
+        "This an  streamlit application which uses pytorch   to do flowere image pridection")
     st.sidebar.title('Choose Image Source')
     image_source = st.sidebar.radio('Select Image Source:', ('Upload', 'URL'))
 
