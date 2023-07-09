@@ -4,6 +4,7 @@ import streamlit as st
 from io import BytesIO
 from PIL import Image
 from predict import predict_flower
+from streamlit_lottie import st_lottie
 
 def main():
     st.set_page_config(
@@ -17,7 +18,15 @@ def main():
         }
     )
 
-    st.title('Flower Image Prediction')
+    col1, col2 = st.columns([1, 4])
+
+    # Lottie Animation
+    with col1:
+        st_lottie("https://assets5.lottiefiles.com/packages/lf20_Yz2AzPLPXW.json", width=200)
+
+    # Title
+    with col2:
+        st.title('Flower Image Prediction')
 
     # Create language selection in the sidebar
     st.sidebar.title('Choose Language')
@@ -28,15 +37,15 @@ def main():
         "An AI-powered flower image prediction app using PyTorch and Streamlit. Upload an image or provide an image URL to get instant predictions on flower species. Experience the magic of AI in a simple and intuitive interface!"
     )
 
-    col1, col2 = st.columns(2)
+    col3, col4 = st.columns(2)
 
     # Image Source Selector
-    with col1:
+    with col3:
         st.write('Choose the source of the image for prediction.', style='color: red')
         image_source = st.radio('Select Image Source:', ('Upload', 'URL'))
 
     # Image Uploader
-    with col2:
+    with col4:
         if image_source == 'Upload':
             uploaded_file = st.file_uploader('Choose an image file', type=['jpg', 'jpeg', 'png'])
 
