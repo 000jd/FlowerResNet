@@ -4,5 +4,5 @@ matplotlib==3.4.3
 numpy==1.21.2
 tqdm==4.62.3
 streamlit-lottie==0.0.5
-tensorflow
-opencv-python
+tensorflow==2.12.0
+opencv-python==4.3.0
