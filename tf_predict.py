@@ -10,7 +10,7 @@ def tf_predict_flower(image):
     image = tf.image.convert_image_dtype(image, tf.float32)
     image = tf.expand_dims(image, axis=0)
 
-    model = tf.keras.models.load_model('model_L_0.17vl_0.52.h5')
+    model = tf.keras.models.load_model('model_l0.17vl0.52.h5')
 
     pred = model.predict(image)
     output_class = classes.class_names[np.argmax(pred)]
