@@ -22,7 +22,7 @@ def main():
 
     # Lottie Animation
     with col1:
-        st_lottie("https://assets5.lottiefiles.com/packages/lf20_Yz2AzPLPXW.json", width=200)
+        st_lottie("https://assets5.lottiefiles.com/packages/lf20_Yz2AzPLPXW.json", width=170, height=170)
 
     # Title
     with col2:
