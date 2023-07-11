@@ -62,8 +62,11 @@ def main():
                     flower_name = predict_flower(image)
                     st.success(f'Predicted Flower: {flower_name}')
                 else:
-                    flower_name = tf_predict_flower(image)
-                    st.success(f'Predicted Flower: {flower_name}')
+                    try:
+                        flower_name = tf_predict_flower(image)
+                        st.success(f'Predicted Flower: {flower_name}')
+                    except Exception as e:
+                        st.warning('Sorry somthing went wrong..', icon="🤖")
             st.empty()  # Remove the Lottie animation from the UI once prediction is complete
 
     elif image_source == 'URL':
@@ -81,8 +84,11 @@ def main():
                         flower_name = predict_flower(image)
                         st.success(f'Predicted Flower: {flower_name}')
                     else:
+                        try:
                         flower_name = tf_predict_flower(image)
                         st.success(f'Predicted Flower: {flower_name}')
+                    except Exception as e:
+                        st.warning('Sorry somthing went wrong..', icon="🤖")
                 st.empty()  # Remove the Lottie animation from the UI once prediction is complete
 
             except Exception as e:
