@@ -1,0 +1,6 @@
+torch==2.0.1
+torchvision==0.15.2
+matplotlib==3.4.3
+numpy==1.21.2
+tqdm==4.62.3
+streamlit-lottie==0.0.5
