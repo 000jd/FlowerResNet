@@ -1,13 +1,11 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from tensorflow import keras
 import numpy as np
 from utils import classes
 import cv2
 
-
-def tf_predct_flower(image):
-
+def tf_predict_flower(image):
+    image = np.array(image)  # Convert image to a NumPy array
     image = cv2.resize(image, (224, 224))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     image = np.expand_dims(image, axis=0)
