@@ -18,6 +18,8 @@ def main():
         }
     )
 
+    uploaded_file = None
+    
     col1, col2 = st.columns([1, 4])
 
     # Lottie Animation
