@@ -10,12 +10,19 @@ This GitHub project showcases the classification of flower images using a custom
 - Checkpointing to save and load model for future use
 
 ## Demo  
-![App Screenshot](images/screenshot.png)  
+[Live Demo](https://flowerresnet.streamlit.app)  
+![App Screenshot](images/screenshot.png)
 
 ## Accuracy and Loss Graphs 
 ![Accuracy Screenshot](images/accuracy.png)  
 
 ![Loss Screenshot](images/loss.png)
+
+## Accuracy and Loss Graphs of quantized Mode
+![Accuracy Screenshot](images/quantized_accuracy.png)  
+
+![Loss Screenshot](images/quantized_loss.png)
+
 ## Usage
 To run the Streamlit application download the model and put it in the base diractry and runthe command.
 
