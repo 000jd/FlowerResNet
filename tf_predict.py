@@ -34,7 +34,7 @@ def makemodel():
 def tf_predict_flower(image):
     image = np.array(image)  # Convert image to a NumPy array
     image = tf.image.resize(image, (224, 224))
-    image = tf.image.convert_image_dtype(image, tf.float32)
+    image = tf.image.convert_image_dtype(image/255, tf.float32)
     image = tf.expand_dims(image, axis=0)
 
     model = makemodel()
