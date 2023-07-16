@@ -6,6 +6,7 @@ from predict import predict_flower
 from tf_predict import tf_predict_flower
 from streamlit_lottie import st_lottie
 
+
 def main():
     st.set_page_config(
         page_title="FlowerResNet",
@@ -19,21 +20,23 @@ def main():
     )
 
     uploaded_file = None
-    
+
     col1, col2 = st.columns([1, 4])
 
     # Lottie Animation
     with col1:
         animation_url = "https://assets5.lottiefiles.com/packages/lf20_Yz2AzPLPXW.json"
-        animation = st_lottie(animation_url, height=170, width=170, key="lottie")
+        animation = st_lottie(animation_url, height=170,
+                              width=170, key="lottie")
 
     # Title
     with col2:
-        st.title('Flower Image Prediction')
+        st.title('Dual Model Flower Image Prediction')
 
     # Create language selection in the sidebar
     st.sidebar.title('Choose Language')
-    language = st.sidebar.selectbox('Select Language:', ('English', 'Spanish', 'French'))
+    language = st.sidebar.selectbox(
+        'Select Language:', ('English', 'Spanish', 'French'))
 
     # Create sidebar
     st.sidebar.info(
@@ -50,12 +53,14 @@ def main():
     # Image Uploader
     with col4:
         if image_source == 'Upload':
-            uploaded_file = st.file_uploader('Choose an image file', type=['jpg', 'jpeg', 'png'])
+            uploaded_file = st.file_uploader(
+                'Choose an image file', type=['jpg', 'jpeg', 'png'])
 
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
 
-        st.image(image, caption='Uploaded Image', use_column_width=True, width=300)
+        st.image(image, caption='Uploaded Image',
+                 use_column_width=True, width=300)
 
         # Predict button
         if st.button('Predict'):
@@ -79,7 +84,8 @@ def main():
                 response = requests.get(image_url)
                 image = Image.open(BytesIO(response.content))
 
-                st.image(image, caption='Image from URL', use_column_width=True, width=300)
+                st.image(image, caption='Image from URL',
+                         use_column_width=True, width=300)
 
                 with st.spinner('Predicting...'):
                     if model != 'Tensorflow':
@@ -95,6 +101,7 @@ def main():
 
             except Exception as e:
                 st.error(f"Error: {e}")
+
 
 if __name__ == '__main__':
     main()
