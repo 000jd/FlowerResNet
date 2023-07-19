@@ -7,7 +7,7 @@ from utils.training import evaluate
 data_path = 'data/flower299'
 batch_size = 128
 num_classes = 299
-checkpoint_path = 'checkpoint/res_checkpoint.pth'
+checkpoint_path = 'checkpoint/res_checkpoint_quantized.pth'
 
 _, test_loader = load_dataset(data_path, batch_size)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
